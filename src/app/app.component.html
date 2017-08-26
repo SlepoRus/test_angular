@@ -1,0 +1,153 @@
+<div class="top">
+  <img src="./images/logo.png" class="logo">
+  <div class="project">
+    <span> Barcelona Design </span>
+    <img src="./images/arrow.png">
+  </div>
+  <div class="profile">
+    <img src="./images/photo.png">
+    <span>
+      Petr_Osmanov
+    </span>
+    <img src="./images/arrow.png">
+  </div>
+</div>
+<div class="main">
+  <div class="left">
+    <div class="button-task">
+      <span>ДОБАВИТЬ ЗАДАЧУ</span>
+    </div>
+    <div class="menu">
+      <div class="info-menu">
+        <div>
+          Сводная информация
+        </div>
+        <div>
+          <label>Все задачи</label>
+          <ul>
+            <li>Открытые</li>
+            <li>Выполненные</li>
+          </ul>
+        </div>
+        <div>
+          Отчеты
+        </div>
+      </div>
+      <img src="./images/white-arrow.png">
+    </div>
+  </div>
+  <div class="right">
+    <div class="top-right">
+      <img src="./images/thunder.png">
+      Barcelona Design <img src="./images/black-arrow.png">
+    </div>
+    <div class="right-table">
+      <div class="top-table">
+        Открытые задачи
+        <span>
+          {{ count }}
+        </span>
+        <div>
+          <img src="./images/req_square.png" style="vertical-align:middle;">
+          Добавить задачу
+        </div>
+      </div>
+      <div class="table-main">
+        <div class="table-main-top">
+          <select (change)="selectByDate($event.target.value)" class="date">
+            <option value="12.15">Декабрь, 15</option>
+            <option value="10.15">Октябрь, 15</option>
+          </select>
+          <select (change)="selectByOpen($event.target.value)" class="task">
+            <option value="all">Все</option>
+            <option value="open">Открытые задачи</option>
+            <option value="closed">Закрытые задачи</option>
+          </select>
+          <div class="search-box">
+            <input (input)="selectByInput($event.target.value)" type="text" class="search" placeholder="Поиск задач по проекту">
+            <img src="./images/search.png">
+          </div>
+        </div>
+        <table>
+          <thead>
+            <th>Т</th>
+            <th>Тикет</th>
+            <th>Название</th>
+            <th>П<img src="./images/gray-arrow.png" style="vertical-align:middle;padding-left:5px;"></th>
+            <th>Статаус</th>
+            <th>Решение</th>
+            <th>Создано</th>
+            <th>Обновлено</th>
+            <th>Дедлайн</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of model; let i = index">
+              <td *ngIf="item.type == 1"><img src="./images/green_ticket.png"></td>
+              <td *ngIf="item.type == 2"><img src="./images/red_ticket.png"></td>
+              <td *ngIf="item.type == 3"><img src="./images/blue_ticket.png"></td>
+              <td *ngIf="item.type == 4"><img src="./images/orange_ticket.png"></td>
+              <td>{{ item.id }}</td>
+              <td>{{ item.title }}</td>
+              <td *ngIf="item.p == 'red'"><img src="./images/red_dot.png"></td>
+              <td *ngIf="item.p == 'green'"><img src="./images/green_dot.png"></td>
+              <td *ngIf="item.p == 'gray'"><img src="./images/gray_dot.png"></td>
+              <td *ngIf="item.status == 'open'">Открыто</td>
+              <td *ngIf="item.status == 'closed'">Закрыто</td>
+              <td *ngIf="item.solution == false">Не решено</td>
+              <td *ngIf="item.solution == true">Решено</td>
+              <td>{{ item.created }}</td>
+              <td>{{ item.updated }}</td>
+              <td>{{ item.deadline }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table-bot">
+          <div class="pagination">
+            <div class="page" *ngFor="let item of pages; let i = index" ngClass="{{item.value == page ? 'active' : ''}}" (click)="changePage(item.value)">
+              <span >{{ item.text }}</span>
+            </div>
+          </div>
+          <div class="task-count">
+            <span>Количество задач: <a (click)="changeLimit(20)">20</a><a (click)="changeLimit(50)">50</a><a (click)="changeLimit(100)">100</a><a (click)="changeLimit(500)">все</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="down-table-blocks">
+      <div class="left-block">
+        <div class="header">
+          Возникли вопросы?
+        </div>
+        <div  class="note">
+          Воспользуйтесь формой отправки заявки и мы свяжемся с вами
+        </div>
+        <div class="button-change">
+          <span>Оставить заявку</span>
+        </div>
+      </div>
+      <div class="right-block">
+        <div class="header">
+          Или свяжитесь с нами напрямую
+        </div>
+        <div  class="note">
+          г. Москва ул. Викторенко д. 11 +7 (499) 502-81-39
+        </div>
+        <a href="#">
+          order@trendsoft.ru
+        </a>
+      </div>
+    </div>
+    <div class="footer">
+      <div>
+        © ООО «Трендсофт», 2011-2015
+      </div>
+      <div>
+        +7 (499) 502-81-39
+      </div>
+      <div>
+        <img src="./images/f.png">
+        <img src="./images/vk.png">
+      </div>
+    </div>
+  </div>
+</div>

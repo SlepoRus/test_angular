@@ -1,0 +1,334 @@
+@import url('../style/constants/colors.less');
+@import url('../style/constants/mixins.less');
+
+body {
+  margin: 0;
+  font-family: Ubuntu, sans-serif;
+}
+
+label {
+  font-weight: bold;
+}
+.profile {
+  color:@RED_PURE;
+  .font(14px, 0, medium);
+
+  img {
+    padding-right:5px;
+    vertical-align: middle;
+  }
+}
+
+.top {
+  padding:16px 37px 16px 37px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  padding-right:37px;
+}
+
+
+.project {
+  padding-left:37px;
+  .font(14px, 1);
+  color: @RED;
+  flex: 12;
+}
+
+
+
+select, input {
+  margin:0;
+  padding:0;
+  height:32px;
+  padding-left:7px;
+  .font(14px, 2.1);
+  margin-right:20px;
+  border:1px solid @GRAY_DOTS;
+
+}
+
+.date {
+  width:157px;
+}
+.task {
+  width: 207px;
+}
+.search-box {
+  float:right;
+  display:inline-block;
+  img {
+    vertical-align: middle;
+    padding-top:4px;
+    padding-bottom:4px;
+    padding-right: 2px;
+    margin-left:-29px;
+    background-color: white;
+  }
+
+}
+
+.search {
+  margin-right: 0;
+  height:30px;
+  width: 281px;
+}
+.main {
+  background-color: @GRAY_BACKGROUND;
+  min-height:1200px;
+  display:flex;
+  padding:35px;
+  .left {
+    margin-right: 32px;
+    .button-task {
+      width: 168px;
+      height: 38px;
+      background-color:@RED;
+      color:white;
+      text-align: center;
+      display:table-cell;
+      vertical-align: middle;
+      font-size: 12px;
+      line-height: 2.5;
+      font-weight: bold;
+    }
+    .menu {
+      display:flex;
+      align-items: center;
+      .info-menu {
+        margin-top:29px;
+        width: 168px;
+        height: 230px;
+        background-color:white;
+        div {
+          text-align: left;
+          padding-left:26px;
+          padding-top:13px;
+          padding-bottom: 17px;
+          .font(13px, 1.6, 700);
+          ul {
+            list-style: square outside;
+            .font(13px, 1.7);
+            color:@RED_PURE;
+            margin:0;
+            padding:0;
+            list-style: none;
+            li:before {
+              content: "\25AA";
+              padding-right: 8px;
+              color:@GRAY_DOTS;
+            }
+            li {
+              padding-top:1px;
+              padding-bottom: 1px;
+            }
+          }
+        }
+        div:nth-child(1) {
+          color: @GRAY_TEXT;
+          .font(12px, 1.5);
+          padding-top:25px;
+          padding-right: 15px;
+          text-transform: uppercase;
+          max-height:78px;
+        }
+        div:nth-child(even) {
+          .border(1px);
+        }
+        div:last-child {
+          color: @RED_PURE;
+        }
+      }
+
+    }
+  }
+  .right {
+    .top-right {
+      .font(30px, 0.8, bold);
+      text-align: left;
+
+      img {
+        padding-right: 12px;
+        vertical-align: middle;
+      }
+    }
+    .right-table {
+      margin-top:29px;
+      width: 1000px;
+      background-color:white;
+
+      .top-table {
+        padding:22px 27px 22px 27px;
+        .font(22px, 1.6);
+        border-bottom:1px solid @GRAY_BACKGROUND;
+        box-sizing: content-box;
+        max-height:78px;
+        span {
+          color: @GRAY_TEXT;
+          padding-left:25px;
+          vertical-align: baseline;
+        }
+        div {
+          .font(14px, 0);
+          float:right;
+          padding-top:10px;
+          color:@RED_PURE;
+          img {
+            padding-right: 5px;
+          }
+        }
+      }
+      .table-main {
+        padding:27px 20px 20px 27px;
+
+        table {
+          border-collapse: collapse;
+          margin-top:27px;
+          width:100%;
+          th {
+            text-align: left;
+            .font(14px, 0);
+            color:@GRAY_TEXT;
+            padding:15px 20px 15px 0px;
+            .border(1px);
+          }
+          td {
+            font-size:14px;
+            padding:15px 20px 15px 0px;
+          }
+          tr {
+            border-bottom:1px solid @GRAY_BACKGROUND;
+          }
+        }
+      }
+    }
+  }
+}
+.down-table-blocks {
+  display:flex;
+  padding-top:25px;
+  text-transform: uppercase;
+  width:1000px;
+  max-height:347px;
+  div {
+    box-sizing: border-box;
+  }
+  .left-block {
+    padding:65px;
+    width: 500px;
+    height: 347px;
+    background-color: @RED;
+    color:white;
+
+  }
+  .right-block {
+    padding:65px;
+    width: 500px;
+    height: 347px;
+    background-color: white;
+    a {
+      outline: none;
+      color: @SMAK_TEAL;
+      text-decoration: none;
+
+    }
+  }
+}
+.header {
+  .font(24px, 1.5, bold);
+  letter-spacing: 1px;
+}
+.note {
+  .font(18px, 1.7);
+  margin-top:17px;
+  letter-spacing: 1px;
+  margin-bottom: 17px;
+}
+
+
+
+.table-bot {
+  display:flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-top:25px;
+  margin-bottom: 10px;
+  .page {
+    font-weight: bold;
+    display:inline-block;
+    margin-right:6px;
+    min-width: 28px;
+    min-height: 28px;
+    text-align: center;
+    background-color: @GRAY_BACKGROUND;
+    &:hover {
+      color:white;
+      cursor:pointer;
+      background-color: @RED_PURE;
+    }
+    span {
+      vertical-align: -webkit-baseline-middle;
+    }
+  }
+  .active {
+    background-color: @RED_PURE;
+    color:white;
+  }
+}
+.task-count {
+  color: @GRAY_TEXT;
+  span {
+    vertical-align: middle;
+  }
+  a {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: @SMAK_TEAL;
+    text-decoration: none;
+    &:last-child {
+      padding-right:0;
+    }
+    &:hover {
+      cursor:pointer;
+      opacity: 0.8;
+    }
+  }
+
+}
+.footer {
+  margin-top:60px;
+  color:@GRAY_TEXT;
+  display:flex;
+  font-size: 13px;
+  justify-content: space-between;
+  div:last-child {
+    float:right;
+    img {
+      vertical-align: middle;
+      padding:1px;
+    }
+  }
+  div:nth-child(2) {
+
+    font-weight: 300;
+    color:black;
+    flex:1;
+    padding-left:100px;
+  }
+}
+
+
+.button-change {
+  text-align: center;
+  color:black;
+  .font(12px, 2.5, bolder);
+  background-color: white;
+  width: 163px;
+  height: 38px;
+  span {
+    vertical-align:sub;
+  }
+}
