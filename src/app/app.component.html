@@ -81,6 +81,7 @@
             <th>Дедлайн</th>
           </thead>
           <tbody>
+
             <tr *ngFor="let item of model; let i = index">
               <td *ngIf="item.type == 1"><img src="./images/green_ticket.png"></td>
               <td *ngIf="item.type == 2"><img src="./images/red_ticket.png"></td>
@@ -101,6 +102,7 @@
             </tr>
           </tbody>
         </table>
+        <div style="padding:10px;text-align:center;" *ngIf="model.length === 0">Нет значений</div>
         <div class="table-bot">
           <div class="pagination">
             <div class="page" *ngFor="let item of pages; let i = index" ngClass="{{item.value == page ? 'active' : ''}}" (click)="changePage(item.value)">
